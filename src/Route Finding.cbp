@@ -32,7 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="buildMap.cpp" />
+		<Unit filename="buildMap.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="mapStructure.h" />
+		<Unit filename="routeFinding.cpp" />
+		<Unit filename="routeFinding.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

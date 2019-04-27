@@ -22,16 +22,21 @@
 #include <utility>
 #include <ctime>
 #include <climits>
-using namespace std;
 #include "mapStructure.h"
 #include "buildMap.h"
-
-int main(int argc, char **argv)
+#include "routeFinding.h"
+using namespace std;
+struct dijkstra routeFinding(int a_ID,int b_ID)
 {
-    vector<Vertex> myMap;
-    if(readFile("Final_Map.map",myMap))
-        cout<<"complete"<<endl;
-    else
-        cout<<"No file found"<<endl;;
-    return 0;
+    int a=findID(a_ID);
+    int b=findID(b_ID);
+    if(a==-1||b==-1)
+        return -1;
+    else if(a==b)
+        return 0;
+    else{
+        struct dijkstra *route=new struct dijkstra[myMap.size()];
+        delete
+    }
 }
+
