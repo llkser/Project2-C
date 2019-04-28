@@ -145,3 +145,29 @@ Type stringToNum(const string& str)
     ss>>num;
     return num;
 }
+
+void printMap(vector<Vertex>& myMap)
+{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

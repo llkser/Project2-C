@@ -22,11 +22,12 @@
 #include <utility>
 #include <ctime>
 #include <climits>
+using namespace std;
 #include "mapStructure.h"
 #include "buildMap.h"
 #include "routeFinding.h"
-using namespace std;
-struct dijkstra routeFinding(int a_ID,int b_ID)
+
+void routeFinding(int a_ID,int b_ID,vector<Vertex>& myMap)
 {
     int a=findID(a_ID);
     int b=findID(b_ID);

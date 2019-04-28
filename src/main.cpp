@@ -25,6 +25,7 @@
 using namespace std;
 #include "mapStructure.h"
 #include "buildMap.h"
+#include "routeFinding.h"
 
 int main(int argc, char **argv)
 {
