@@ -27,12 +27,16 @@ using namespace std;
 #include "buildMap.h"
 #include "routeFinding.h"
 
+//Main function including an user interface.
 int main(int argc, char **argv)
 {
     vector<Vertex> myMap;
     if(readFile("Final_Map.map",myMap))
-        cout<<"complete"<<endl;
+        printMap(myMap);
     else
-        cout<<"No file found"<<endl;;
+        cout<<"No file found"<<endl;
+    int a,b;
+    while(cin>>a>>b)
+        routeFinding(a,b,myMap);
     return 0;
 }

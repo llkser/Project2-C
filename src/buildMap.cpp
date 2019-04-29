@@ -26,6 +26,7 @@ using namespace std;
 #include "mapStructure.h"
 #include "buildMap.h"
 
+//A function to read a file str into myMap.
 int readFile(string str, vector<Vertex>& myMap)
 {
     string line,buf;
@@ -106,6 +107,7 @@ int readFile(string str, vector<Vertex>& myMap)
         return 0;
 }
 
+//A function to add a edge between two given points x and y.
 void addEDge(int x_ID,int y_ID,int id,double len,vector<Vertex>& myMap)
 {
     struct edge *x_next,*y_next;
@@ -129,6 +131,7 @@ void addEDge(int x_ID,int y_ID,int id,double len,vector<Vertex>& myMap)
         myMap[y_ID].next=new edge(id,x_ID,len);
 }
 
+//A function to find the index of a point in myMap whose ID is given.
 int findID(int ID, vector<Vertex>& myMap)
 {
     for(int i=0;i<myMap.size();i++)
@@ -137,6 +140,7 @@ int findID(int ID, vector<Vertex>& myMap)
     return -1;
 }
 
+//A template function to convert a string to a number.
 template <class Type>
 Type stringToNum(const string& str)
 {
@@ -146,9 +150,34 @@ Type stringToNum(const string& str)
     return num;
 }
 
+//A function to print myMap into a file named "MyMap.dat".
 void printMap(vector<Vertex>& myMap)
 {
-
+    if(myMap.empty())
+        cout<<"Map data not found!"<<endl;
+    else{
+        fstream fout;
+        fout.open("MyMap.dat",ios::trunc|ios::out);
+        struct edge *next;
+        for(int i=0;i<myMap.size();i++)
+        {
+            if(myMap[i].next)
+            {
+                next=myMap[i].next;
+                while(next)
+                {
+                    fout<<myMap[i].lon<<" "<<myMap[i].lat<<endl;
+                    fout<<myMap[next->V_index].lon<<" "<<myMap[next->V_index].lat<<endl;
+                    fout<<endl;
+                    next=next->next;
+                }
+            }
+            else
+                fout<<myMap[i].lon<<" "<<myMap[i].lat<<endl<<endl;
+        }
+        fout.close();
+        cout<<"Complete!"<<endl;
+    }
 }
 
 
