@@ -31,6 +31,20 @@ using namespace std;
 int main(int argc, char **argv)
 {
     vector<Vertex> myMap;
+    /*cout<<"*************************"<<endl;
+    cout<<"          myMap          "<<endl;
+    cout<<"*************************"<<endl<<endl;
+    if(argc!=2)
+    {
+        cout<<"No data file input!"<<endl;
+        cout<<"Please input a date file:"<<endl;
+        char *str;
+        cin>>str;
+        while(!readFile(str,myMap))
+    }
+    else{
+
+    }*/
     if(readFile("Final_Map.map",myMap))
         printMap(myMap);
     else

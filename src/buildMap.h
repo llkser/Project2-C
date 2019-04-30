@@ -13,7 +13,7 @@ struct link{
 };
 
 //Functions to build myMap from a file address in str.
-int readFile(string str, vector<Vertex>& myMap);
+int readFile(char* str, vector<Vertex>& myMap);
 void addEDge(int x_ID,int y_ID,int id,double len,vector<Vertex>& myMap);
 int findID(int ID, vector<Vertex>& myMap);
 template <class Type>

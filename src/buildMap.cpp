@@ -27,7 +27,7 @@ using namespace std;
 #include "buildMap.h"
 
 //A function to read a file str into myMap.
-int readFile(string str, vector<Vertex>& myMap)
+int readFile(char* str, vector<Vertex>& myMap)
 {
     string line,buf;
     fstream fin;
@@ -179,24 +179,3 @@ void printMap(vector<Vertex>& myMap)
         cout<<"Complete!"<<endl;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

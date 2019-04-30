@@ -104,6 +104,7 @@ int findMin(struct dijkstra *route,set<int>& flag,int s)
 //A function to print the shortest route into a file named "MyRoute.dat".
 void printRoute(vector<int> &routeFound,vector<Vertex>& myMap)
 {
+    printMap(myMap);
     fstream fout;
     fout.open("MyRoute.dat",ios::trunc|ios::out);
     for(int i=0;i<routeFound.size();i++)
@@ -111,23 +112,3 @@ void printRoute(vector<int> &routeFound,vector<Vertex>& myMap)
     fout.close();
     cout<<"Complete!"<<endl;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
