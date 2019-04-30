@@ -31,26 +31,69 @@ using namespace std;
 int main(int argc, char **argv)
 {
     vector<Vertex> myMap;
-    /*cout<<"*************************"<<endl;
+    char str[100];
+
+    cout<<"*************************"<<endl;
     cout<<"          myMap          "<<endl;
     cout<<"*************************"<<endl<<endl;
     if(argc!=2)
     {
         cout<<"No data file input!"<<endl;
         cout<<"Please input a date file:"<<endl;
-        char *str;
         cin>>str;
         while(!readFile(str,myMap))
+        {
+            cout<<"Data file unavailable!"<<endl;
+            cout<<"Please input a date file:"<<endl;
+            cin>>str;
+            myMap.clear();
+        }
     }
     else{
+        while(!readFile(argv[1],myMap))
+        {
+            cout<<"Data file unavailable!"<<endl;
+            cout<<"Please input a date file:"<<endl;
+            cin>>str;
+            myMap.clear();
+        }
+    }
+    cout<<"Welcome!"<<endl<<endl;
 
-    }*/
-    if(readFile("Final_Map.map",myMap))
-        printMap(myMap);
-    else
-        cout<<"No file found"<<endl;
+    int flag=0;
     int a,b;
-    while(cin>>a>>b)
-        routeFinding(a,b,myMap);
+    while(true)
+    {
+        cout<<"1. insert new data into myMap."<<endl;
+        cout<<"2. print myMap out."<<endl;
+        cout<<"3. Shortest route finding"<<endl;
+        cout<<" 'q' to quit."<<endl<<endl;
+        if(cin>>flag)
+        {
+            switch(flag){
+            case 1:
+                cout<<"Please input a date file:"<<endl;
+                cin>>str;
+                if(!readFile(str,myMap))
+                    cout<<"Data file unavailable!"<<endl;
+                break;
+            case 2:
+                printMap(myMap);
+                break;
+            case 3:
+                cout<<"Please input two points to find the shortest route between them:"<<endl;
+                cout<<"Point a ID = ";
+                cin>>a;
+                cout<<"Point b ID = ";
+                cin>>b;
+                routeFinding(a,b,myMap);
+                break;
+            }
+        }
+        else
+            break;
+        cout<<endl;
+    }
+
     return 0;
 }

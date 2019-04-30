@@ -101,7 +101,13 @@ int readFile(char* str, vector<Vertex>& myMap)
                     cout<<"Way ID="<<dataFile[i].ID<<" unavailable!"<<endl;
             }
         }
-        return 1;
+        if(myMap.empty())
+            return 0;
+        else{
+            cout<<"Complete!"<<endl;
+            cout<<myMap.size()<<" Vertexes in the map now."<<endl;
+            return 1;
+        }
     }
     else
         return 0;
@@ -176,6 +182,5 @@ void printMap(vector<Vertex>& myMap)
                 fout<<myMap[i].lon<<" "<<myMap[i].lat<<endl<<endl;
         }
         fout.close();
-        cout<<"Complete!"<<endl;
     }
 }
